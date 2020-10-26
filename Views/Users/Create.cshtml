@@ -1,0 +1,105 @@
+﻿@model TrueQuizTwo.Models.User
+
+
+@{
+    ViewData["Title"] = "Create";
+    var date = new DateTime();
+}
+
+<h1>Create User</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="No" class="control-label"></label>
+                <input asp-for="No" class="form-control" />
+                <span asp-validation-for="No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Userid" class="control-label"></label>
+                <input asp-for="Userid" class="form-control" />
+                <span asp-validation-for="Userid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Uername" class="control-label"></label>
+                <input asp-for="Uername" class="form-control" />
+                <span asp-validation-for="Uername" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Firstname" class="control-label"></label>
+                <input asp-for="Firstname" class="form-control" />
+                <span asp-validation-for="Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lastname" class="control-label"></label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="AddressId" class="control-label"></label>
+                <input asp-for="AddressId" class="form-control" />
+                <span asp-validation-for="AddressId" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label class="control-label">Province</label>
+                <select asp-for="khetId" class="form-control"
+                        asp-items="@(new SelectList(@ViewBag.Khet,"khetId", "KhetName"))">
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Province</label>
+                <select asp-for="khwangId" class="form-control"
+                        asp-items="@(new SelectList(@ViewBag.Khawng,"khwangId", "khwangName"))">
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Province</label>
+                @*<input asp-for="zipcode" class="form-control" />*@
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="CreateBy" class="control-label"></label>
+                <input asp-for="CreateBy" class="form-control" value="admin" />
+                <span asp-validation-for="CreateBy" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="CreateDate" class="control-label"></label>
+                <input asp-for="CreateDate" class="form-control" value="@date" />
+                <span asp-validation-for="CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="LateUpdateBy" class="control-label"></label>
+                <input asp-for="LateUpdateBy" class="form-control" value="admin" />
+                <span asp-validation-for="LateUpdateBy" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="LateUpdateDate" class="control-label"></label>
+                <input asp-for="LateUpdateDate" class="form-control" value="@date" />
+                <span asp-validation-for="LateUpdateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

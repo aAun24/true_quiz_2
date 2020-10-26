@@ -1,0 +1,84 @@
+﻿@model TrueQuizTwo.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Userid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Userid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Firstname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Firstname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lastname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lastname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AddressId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AddressId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Uername)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Uername)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreateBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LateUpdateBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LateUpdateBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LateUpdateDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LateUpdateDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.No">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

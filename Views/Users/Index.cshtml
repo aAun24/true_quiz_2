@@ -1,0 +1,93 @@
+﻿@model IEnumerable<TrueQuizTwo.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Users</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="User">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Userid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uername)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LateUpdateBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LateUpdateDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Userid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uername)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LateUpdateBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LateUpdateDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.No">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.No">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css" />
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#User').DataTable();
+    });
+</script>
